@@ -1,0 +1,3546 @@
+{
+  "schema_version": "cudad.analysis.v1",
+  "functions": [
+    {
+      "name": "_Z9sgemv_k32PfS_S_ii",
+      "sm": 80,
+      "instruction_count": 136,
+      "cfg": {
+        "block_count": 12,
+        "edge_count": 16,
+        "reachable_block_count": 10,
+        "unreachable_block_count": 2,
+        "reachable_edge_count": 15,
+        "unreachable_edge_count": 1,
+        "fallthrough_edges": 9,
+        "conditional_edges": 6,
+        "unconditional_edges": 1,
+        "return_blocks": 1,
+        "unresolved_terminators": 0,
+        "control_issue_count": 0
+      },
+      "cfg_metrics": {
+        "entry_block_id": 0,
+        "node_count": 12,
+        "edge_count": 16,
+        "reachable_node_count": 10,
+        "unreachable_node_count": 2,
+        "reachable_edge_count": 15,
+        "unreachable_edge_count": 1,
+        "loop_scc_count": 3,
+        "largest_scc_size": 1,
+        "backedge_count": 3,
+        "irreducible_scc_count": 0,
+        "reducible_loop_count": 3,
+        "max_loop_entry_count": 1,
+        "branch_block_count": 6,
+        "max_out_degree": 2,
+        "cyclomatic_complexity": 7,
+        "backedges": [
+          {
+            "from_block_id": 4,
+            "to_block_id": 4,
+            "kind": "conditional",
+            "natural_loop": true
+          },
+          {
+            "from_block_id": 6,
+            "to_block_id": 6,
+            "kind": "conditional",
+            "natural_loop": true
+          },
+          {
+            "from_block_id": 7,
+            "to_block_id": 7,
+            "kind": "conditional",
+            "natural_loop": true
+          }
+        ],
+        "sccs": [
+          {
+            "block_ids": [
+              4
+            ],
+            "size": 1,
+            "external_entry_block_ids": [
+              4
+            ],
+            "entry_count": 1,
+            "irreducible": false
+          },
+          {
+            "block_ids": [
+              6
+            ],
+            "size": 1,
+            "external_entry_block_ids": [
+              6
+            ],
+            "entry_count": 1,
+            "irreducible": false
+          },
+          {
+            "block_ids": [
+              7
+            ],
+            "size": 1,
+            "external_entry_block_ids": [
+              7
+            ],
+            "entry_count": 1,
+            "irreducible": false
+          }
+        ],
+        "warnings": [
+          {
+            "code": "unreachable_cfg_blocks",
+            "message": "2 CFG block(s) are decoded but unreachable from the selected entry"
+          }
+        ]
+      },
+      "structurizer": {
+        "unstructured_jump_count": 0,
+        "conditional_unstructured_jump_count": 0,
+        "by_reason": {},
+        "diagnostics": {
+          "initial_region_count": 12,
+          "final_region_count": 3,
+          "final_reachable_region_count": 1,
+          "final_unreachable_region_count": 2,
+          "final_reachable_region_ids": [
+            23
+          ],
+          "final_unreachable_region_ids": [
+            10,
+            11
+          ],
+          "iteration_count": 13,
+          "max_iteration_count": 676,
+          "collapsed_region_count": 9,
+          "split_count": 0,
+          "goto_fallback_count": 0,
+          "bailout": null,
+          "events": [
+            {
+              "iteration": 1,
+              "rule": "do_while",
+              "region_id": 4,
+              "from_block_id": 4,
+              "to_block_id": null,
+              "active_region_count_before": 12,
+              "active_region_count_after": 12,
+              "message": "do_while collapsed region R4 rooted at BB4"
+            },
+            {
+              "iteration": 2,
+              "rule": "sequence",
+              "region_id": 3,
+              "from_block_id": 3,
+              "to_block_id": null,
+              "active_region_count_before": 12,
+              "active_region_count_after": 11,
+              "message": "sequence collapsed region R3 rooted at BB3"
+            },
+            {
+              "iteration": 3,
+              "rule": "if_then",
+              "region_id": 2,
+              "from_block_id": 2,
+              "to_block_id": null,
+              "active_region_count_before": 11,
+              "active_region_count_after": 10,
+              "message": "if_then collapsed region R2 rooted at BB2"
+            },
+            {
+              "iteration": 4,
+              "rule": "do_while",
+              "region_id": 6,
+              "from_block_id": 6,
+              "to_block_id": null,
+              "active_region_count_before": 10,
+              "active_region_count_after": 10,
+              "message": "do_while collapsed region R6 rooted at BB6"
+            },
+            {
+              "iteration": 5,
+              "rule": "if_then",
+              "region_id": 5,
+              "from_block_id": 5,
+              "to_block_id": null,
+              "active_region_count_before": 10,
+              "active_region_count_after": 9,
+              "message": "if_then collapsed region R5 rooted at BB5"
+            },
+            {
+              "iteration": 6,
+              "rule": "do_while",
+              "region_id": 7,
+              "from_block_id": 7,
+              "to_block_id": null,
+              "active_region_count_before": 9,
+              "active_region_count_after": 9,
+              "message": "do_while collapsed region R7 rooted at BB7"
+            },
+            {
+              "iteration": 7,
+              "rule": "sequence",
+              "region_id": 8,
+              "from_block_id": 8,
+              "to_block_id": null,
+              "active_region_count_before": 9,
+              "active_region_count_after": 8,
+              "message": "sequence collapsed region R8 rooted at BB8"
+            },
+            {
+              "iteration": 8,
+              "rule": "sequence",
+              "region_id": 14,
+              "from_block_id": 5,
+              "to_block_id": null,
+              "active_region_count_before": 8,
+              "active_region_count_after": 7,
+              "message": "sequence collapsed region R14 rooted at BB5"
+            },
+            {
+              "iteration": 9,
+              "rule": "if_then",
+              "region_id": 1,
+              "from_block_id": 1,
+              "to_block_id": null,
+              "active_region_count_before": 7,
+              "active_region_count_after": 6,
+              "message": "if_then collapsed region R1 rooted at BB1"
+            },
+            {
+              "iteration": 10,
+              "rule": "sequence",
+              "region_id": 0,
+              "from_block_id": 0,
+              "to_block_id": null,
+              "active_region_count_before": 6,
+              "active_region_count_after": 5,
+              "message": "sequence collapsed region R0 rooted at BB0"
+            },
+            {
+              "iteration": 11,
+              "rule": "sequence",
+              "region_id": 17,
+              "from_block_id": 8,
+              "to_block_id": null,
+              "active_region_count_before": 5,
+              "active_region_count_after": 4,
+              "message": "sequence collapsed region R17 rooted at BB8"
+            },
+            {
+              "iteration": 12,
+              "rule": "sequence",
+              "region_id": 21,
+              "from_block_id": 8,
+              "to_block_id": null,
+              "active_region_count_before": 4,
+              "active_region_count_after": 3,
+              "message": "sequence collapsed region R21 rooted at BB8"
+            }
+          ]
+        },
+        "jumps": [],
+        "warnings": []
+      },
+      "analysis_view": "raw_lifted_ssa",
+      "render_view": "render_ir",
+      "ssa": {
+        "block_count": 10,
+        "statement_count": 205,
+        "phi_count": 82
+      },
+      "optimized_ssa": {
+        "block_count": 10,
+        "statement_count": 189,
+        "phi_count": 82
+      },
+      "render_ssa": {
+        "block_count": 10,
+        "statement_count": 189,
+        "phi_count": 82
+      },
+      "abi": {
+        "profile": {
+          "generation": "modern_param_160",
+          "const_bank": 0,
+          "param_base": 352
+        },
+        "profile_source": "sm_metadata",
+        "profile_sensitive": false,
+        "const_memory_count": 25,
+        "const_memory_by_kind": {
+          "param_word": 23,
+          "abi_internal": 2
+        },
+        "unknown_const_memory_count": 0,
+        "parameter_word_count": 23,
+        "parameter_aliases": [
+          {
+            "param_idx": 0,
+            "kind": "ptr64",
+            "confidence": "high",
+            "observed_words": [
+              0,
+              1
+            ],
+            "scalar_kind": null,
+            "c_type": null,
+            "signed_words": [],
+            "pointee_type": "float"
+          },
+          {
+            "param_idx": 2,
+            "kind": "ptr64",
+            "confidence": "high",
+            "observed_words": [
+              0,
+              1
+            ],
+            "scalar_kind": null,
+            "c_type": null,
+            "signed_words": [],
+            "pointee_type": "float"
+          },
+          {
+            "param_idx": 4,
+            "kind": "ptr64",
+            "confidence": "high",
+            "observed_words": [
+              0,
+              1
+            ],
+            "scalar_kind": null,
+            "c_type": null,
+            "signed_words": [],
+            "pointee_type": "float"
+          },
+          {
+            "param_idx": 6,
+            "kind": "word32",
+            "confidence": "medium",
+            "observed_words": [
+              0
+            ],
+            "scalar_kind": "i32",
+            "c_type": "int32_t",
+            "signed_words": [
+              0
+            ],
+            "pointee_type": null
+          },
+          {
+            "param_idx": 7,
+            "kind": "word32",
+            "confidence": "medium",
+            "observed_words": [
+              0
+            ],
+            "scalar_kind": "i32",
+            "c_type": "int32_t",
+            "signed_words": [
+              0
+            ],
+            "pointee_type": null
+          }
+        ],
+        "const_memory": [
+          {
+            "block_id": 0,
+            "statement_index": 0,
+            "bank": 0,
+            "offset": 40,
+            "kind": "abi_internal",
+            "symbol": "abi_internal_0x28",
+            "param_idx": null,
+            "word_idx": null,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 0,
+            "statement_index": 4,
+            "bank": 0,
+            "offset": 376,
+            "kind": "param_word",
+            "symbol": "param_6",
+            "param_idx": 6,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 1,
+            "statement_index": 0,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 1,
+            "statement_index": 4,
+            "bank": 0,
+            "offset": 280,
+            "kind": "abi_internal",
+            "symbol": "abi_internal_0x118",
+            "param_idx": null,
+            "word_idx": null,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 24,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 27,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 28,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 31,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 32,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 33,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 35,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 37,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 39,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 41,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 43,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 46,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 47,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 48,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 50,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 52,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 11,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 13,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 14,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 15,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 9,
+            "statement_index": 1,
+            "bank": 0,
+            "offset": 368,
+            "kind": "param_word",
+            "symbol": "param_4",
+            "param_idx": 4,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          }
+        ],
+        "warnings": []
+      },
+      "memory": {
+        "access_count": 12,
+        "by_space": {
+          "const": 1,
+          "global": 11
+        },
+        "by_kind": {
+          "load": 11,
+          "store": 1
+        },
+        "by_root_confidence": {
+          "proven": 12
+        },
+        "dynamic_address_accesses": 11,
+        "unresolved_root_accesses": 0,
+        "unknown_const_memory_root_accesses": 0,
+        "accesses": [
+          {
+            "block_id": 1,
+            "statement_index": 4,
+            "kind": "load",
+            "space": "const",
+            "bit_width": 64,
+            "vector_width": 2,
+            "constant_byte_offset": 280,
+            "has_dynamic_address": false,
+            "root": "const_symbol:abi_internal_0x118",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 38,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 40,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 42,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 45,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 49,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 51,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 53,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 54,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 16,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 17,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 9,
+            "statement_index": 2,
+            "kind": "store",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_4",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          }
+        ]
+      },
+      "render_abi": {
+        "profile": {
+          "generation": "modern_param_160",
+          "const_bank": 0,
+          "param_base": 352
+        },
+        "profile_source": "sm_metadata",
+        "profile_sensitive": false,
+        "const_memory_count": 23,
+        "const_memory_by_kind": {
+          "param_word": 23
+        },
+        "unknown_const_memory_count": 0,
+        "parameter_word_count": 23,
+        "parameter_aliases": [
+          {
+            "param_idx": 0,
+            "kind": "ptr64",
+            "confidence": "high",
+            "observed_words": [
+              0,
+              1
+            ],
+            "scalar_kind": null,
+            "c_type": null,
+            "signed_words": [],
+            "pointee_type": "float"
+          },
+          {
+            "param_idx": 2,
+            "kind": "ptr64",
+            "confidence": "high",
+            "observed_words": [
+              0,
+              1
+            ],
+            "scalar_kind": null,
+            "c_type": null,
+            "signed_words": [],
+            "pointee_type": "float"
+          },
+          {
+            "param_idx": 4,
+            "kind": "ptr64",
+            "confidence": "high",
+            "observed_words": [
+              0,
+              1
+            ],
+            "scalar_kind": null,
+            "c_type": null,
+            "signed_words": [],
+            "pointee_type": "float"
+          },
+          {
+            "param_idx": 6,
+            "kind": "word32",
+            "confidence": "medium",
+            "observed_words": [
+              0
+            ],
+            "scalar_kind": "i32",
+            "c_type": "int32_t",
+            "signed_words": [
+              0
+            ],
+            "pointee_type": null
+          },
+          {
+            "param_idx": 7,
+            "kind": "word32",
+            "confidence": "medium",
+            "observed_words": [
+              0
+            ],
+            "scalar_kind": "i32",
+            "c_type": "int32_t",
+            "signed_words": [
+              0
+            ],
+            "pointee_type": null
+          }
+        ],
+        "const_memory": [
+          {
+            "block_id": 0,
+            "statement_index": 3,
+            "bank": 0,
+            "offset": 376,
+            "kind": "param_word",
+            "symbol": "param_6",
+            "param_idx": 6,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 1,
+            "statement_index": 0,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 24,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 27,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 28,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 31,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 32,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 33,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 35,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 37,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 39,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 41,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 43,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 46,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 47,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 48,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 50,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 52,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 11,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 13,
+            "bank": 0,
+            "offset": 380,
+            "kind": "param_word",
+            "symbol": "param_7",
+            "param_idx": 7,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 14,
+            "bank": 0,
+            "offset": 360,
+            "kind": "param_word",
+            "symbol": "param_2",
+            "param_idx": 2,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 15,
+            "bank": 0,
+            "offset": 352,
+            "kind": "param_word",
+            "symbol": "param_0",
+            "param_idx": 0,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 9,
+            "statement_index": 0,
+            "bank": 0,
+            "offset": 368,
+            "kind": "param_word",
+            "symbol": "param_4",
+            "param_idx": 4,
+            "word_idx": 0,
+            "profile_sensitive": false,
+            "unresolved_reason": null
+          }
+        ],
+        "warnings": []
+      },
+      "render_memory": {
+        "access_count": 11,
+        "by_space": {
+          "global": 11
+        },
+        "by_kind": {
+          "load": 10,
+          "store": 1
+        },
+        "by_root_confidence": {
+          "proven": 11
+        },
+        "dynamic_address_accesses": 11,
+        "unresolved_root_accesses": 0,
+        "unknown_const_memory_root_accesses": 0,
+        "accesses": [
+          {
+            "block_id": 4,
+            "statement_index": 38,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 40,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 42,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 45,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 49,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 51,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 53,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 4,
+            "statement_index": 54,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 16,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_2",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 6,
+            "statement_index": 17,
+            "kind": "load",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_0",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          },
+          {
+            "block_id": 9,
+            "statement_index": 1,
+            "kind": "store",
+            "space": "global",
+            "bit_width": 32,
+            "vector_width": null,
+            "constant_byte_offset": 0,
+            "has_dynamic_address": true,
+            "root": "param_word_4",
+            "root_confidence": "proven",
+            "unresolved_reason": null
+          }
+        ]
+      },
+      "render_live_ins": {
+        "register_count": 14,
+        "use_count": 37,
+        "suspicious_register_count": 0,
+        "suspicious_use_count": 0,
+        "by_class": {
+          "P": 1,
+          "R": 13
+        },
+        "by_kind": {
+          "expected_machine_state": 37
+        },
+        "by_confidence": {
+          "expected": 37
+        },
+        "by_role": {
+          "phi_input": 37
+        },
+        "registers": [
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 19,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 12,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 11,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 10,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 9,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 8,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 7,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R17.0",
+            "class": "R",
+            "index": 17,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 1,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 7,
+            "first_statement_index": 6,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R18.0",
+            "class": "R",
+            "index": 18,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 2,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 5,
+            "first_statement_index": 5,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R19.0",
+            "class": "R",
+            "index": 19,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 1,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 7,
+            "first_statement_index": 4,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 3,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 2,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 1,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 0,
+            "first_opcode": "phi"
+          }
+        ],
+        "uses": [
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 0,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R23.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 1,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R22.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 2,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R21.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 3,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R20.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 7,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R13.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 8,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R12.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 9,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R11.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 10,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R10.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 11,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R9.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 12,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R8.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "block_id": 4,
+            "statement_index": 19,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "P4.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 0,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R23.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 1,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R22.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 2,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R21.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 3,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R20.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R18.0",
+            "class": "R",
+            "index": 18,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 5,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R18.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 7,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R13.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 8,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R12.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 9,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R11.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 10,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R10.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 11,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R9.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 12,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R8.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "block_id": 5,
+            "statement_index": 19,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "P4.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 0,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R23.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 1,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R22.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 2,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R21.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 3,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R20.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R19.0",
+            "class": "R",
+            "index": 19,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 4,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R19.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R18.0",
+            "class": "R",
+            "index": 18,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 5,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R18.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R17.0",
+            "class": "R",
+            "index": 17,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 6,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R17.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 9,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R13.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 10,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R12.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 11,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R11.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 12,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R10.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 13,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R9.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 14,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R8.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "block_id": 7,
+            "statement_index": 21,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "P4.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          }
+        ],
+        "warnings": []
+      },
+      "unknown_opcodes": [],
+      "opcode_coverage": {
+        "instruction_count": 136,
+        "known_pure_count": 125,
+        "must_preserve_count": 11,
+        "unknown_count": 0,
+        "families": [
+          {
+            "mnemonic": "BRA",
+            "classification": "must_preserve",
+            "count": 7
+          },
+          {
+            "mnemonic": "EXIT",
+            "classification": "must_preserve",
+            "count": 3
+          },
+          {
+            "mnemonic": "F2I",
+            "classification": "known_pure",
+            "count": 1
+          },
+          {
+            "mnemonic": "FADD",
+            "classification": "known_pure",
+            "count": 6
+          },
+          {
+            "mnemonic": "FMUL",
+            "classification": "known_pure",
+            "count": 5
+          },
+          {
+            "mnemonic": "HFMA2",
+            "classification": "known_pure",
+            "count": 3
+          },
+          {
+            "mnemonic": "I2F",
+            "classification": "known_pure",
+            "count": 1
+          },
+          {
+            "mnemonic": "IABS",
+            "classification": "known_pure",
+            "count": 1
+          },
+          {
+            "mnemonic": "IADD3",
+            "classification": "known_pure",
+            "count": 17
+          },
+          {
+            "mnemonic": "IMAD",
+            "classification": "known_pure",
+            "count": 36
+          },
+          {
+            "mnemonic": "ISETP",
+            "classification": "known_pure",
+            "count": 18
+          },
+          {
+            "mnemonic": "LDG",
+            "classification": "known_pure",
+            "count": 10
+          },
+          {
+            "mnemonic": "LEA",
+            "classification": "known_pure",
+            "count": 2
+          },
+          {
+            "mnemonic": "LOP3",
+            "classification": "known_pure",
+            "count": 2
+          },
+          {
+            "mnemonic": "MOV",
+            "classification": "known_pure",
+            "count": 5
+          },
+          {
+            "mnemonic": "MUFU",
+            "classification": "known_pure",
+            "count": 1
+          },
+          {
+            "mnemonic": "NOP",
+            "classification": "known_pure",
+            "count": 12
+          },
+          {
+            "mnemonic": "S2R",
+            "classification": "known_pure",
+            "count": 2
+          },
+          {
+            "mnemonic": "SHF",
+            "classification": "known_pure",
+            "count": 1
+          },
+          {
+            "mnemonic": "SHFL",
+            "classification": "known_pure",
+            "count": 1
+          },
+          {
+            "mnemonic": "STG",
+            "classification": "must_preserve",
+            "count": 1
+          },
+          {
+            "mnemonic": "ULDC",
+            "classification": "known_pure",
+            "count": 1
+          }
+        ]
+      },
+      "calls": {
+        "call_count": 0,
+        "reachable_call_count": 0,
+        "unique_target_count": 0,
+        "reachable_unique_target_count": 0,
+        "shared_target_count": 0,
+        "modeled_call_count": 0,
+        "integration_ready_count": 0,
+        "integration_blocked_count": 0,
+        "lexical_return_only_count": 0,
+        "missing_target_count": 0,
+        "unresolved_target_count": 0,
+        "target_inside_block_count": 0,
+        "unreachable_call_count": 0,
+        "proof_debt_count": 0,
+        "calls": [],
+        "targets": []
+      },
+      "ast_proofs": {
+        "division_helper_elisions": [],
+        "copy_coalescing": {
+          "copy_coalesced_count": 0,
+          "copy_rejected_count": 51,
+          "rejection_reasons": {
+            "type_mismatch": 9,
+            "destination_multiple_definitions": 15,
+            "unreplaceable_use": 1,
+            "crosses_control_boundary": 25,
+            "source_multiple_definitions": 1
+          },
+          "proofs": [],
+          "rejections": [
+            {
+              "source_var": "arg7",
+              "destination_var": "r4_2",
+              "region": "body/seq[5][0]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r22_4",
+              "destination_var": "r22_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[46]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r21_4",
+              "destination_var": "r21_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[47]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r19_4",
+              "destination_var": "r19_3",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[48]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r18_3",
+              "destination_var": "r18_2",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[49]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r16_6",
+              "destination_var": "r16_3",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[50]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r12_3",
+              "destination_var": "r12_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[51]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r11_4",
+              "destination_var": "r11_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[52]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r10_3",
+              "destination_var": "r10_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[53]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r8_3",
+              "destination_var": "r8_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[54]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r7_4",
+              "destination_var": "r7_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[55]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r6_5",
+              "destination_var": "r6_1",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[56]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r5_7",
+              "destination_var": "r5_4",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[57]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r4_7",
+              "destination_var": "r4_5",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[58]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r2_7",
+              "destination_var": "r2_5",
+              "region": "body/seq[6]/then/seq[1]/then/seq[15]/loop[59]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r22_0",
+              "destination_var": "r22_1",
+              "region": "body/seq[6]/then/seq[1]/then[1]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r21_0",
+              "destination_var": "r21_1",
+              "region": "body/seq[6]/then/seq[1]/then[2]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r18_1",
+              "destination_var": "r18_2",
+              "region": "body/seq[6]/then/seq[1]/then[4]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r12_0",
+              "destination_var": "r12_1",
+              "region": "body/seq[6]/then/seq[1]/then[6]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r11_0",
+              "destination_var": "r11_1",
+              "region": "body/seq[6]/then/seq[1]/then[7]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r10_0",
+              "destination_var": "r10_1",
+              "region": "body/seq[6]/then/seq[1]/then[8]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r8_0",
+              "destination_var": "r8_1",
+              "region": "body/seq[6]/then/seq[1]/then[9]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r6_0",
+              "destination_var": "r6_1",
+              "region": "body/seq[6]/then/seq[1]/then[11]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r5_3",
+              "destination_var": "r5_4",
+              "region": "body/seq[6]/then/seq[1]/then[12]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r4_4",
+              "destination_var": "r4_5",
+              "region": "body/seq[6]/then/seq[1]/then[13]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r2_4",
+              "destination_var": "r2_5",
+              "region": "body/seq[6]/then/seq[1]/then[14]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r19_4",
+              "destination_var": "r19_5",
+              "region": "body/seq[6]/then/seq[1]/then[16]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r16_6",
+              "destination_var": "r16_7",
+              "region": "body/seq[6]/then/seq[1]/then[17]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r4_7",
+              "destination_var": "r4_8",
+              "region": "body/seq[6]/then/seq[1]/then[18]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r3_7",
+              "destination_var": "r3_8",
+              "region": "body/seq[6]/then/seq[1]/then[19]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r2_7",
+              "destination_var": "r2_8",
+              "region": "body/seq[6]/then/seq[1]/then[20]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r16_1",
+              "destination_var": "r16_7",
+              "region": "body/seq[6]/then/seq[1]/else[1]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r4_4",
+              "destination_var": "r4_8",
+              "region": "body/seq[6]/then/seq[1]/else[2]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r3_4",
+              "destination_var": "r3_8",
+              "region": "body/seq[6]/then/seq[1]/else[3]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r2_4",
+              "destination_var": "r2_8",
+              "region": "body/seq[6]/then/seq[1]/else[4]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r19_7",
+              "destination_var": "r19_6",
+              "region": "body/seq[6]/then/seq[2]/then/seq[6]/loop[14]",
+              "reason": "unreplaceable_use"
+            },
+            {
+              "source_var": "r17_3",
+              "destination_var": "r17_2",
+              "region": "body/seq[6]/then/seq[2]/then/seq[6]/loop[15]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r16_9",
+              "destination_var": "r16_8",
+              "region": "body/seq[6]/then/seq[2]/then/seq[6]/loop[16]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r4_11",
+              "destination_var": "r4_9",
+              "region": "body/seq[6]/then/seq[2]/then/seq[6]/loop[17]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r3_12",
+              "destination_var": "r3_9",
+              "region": "body/seq[6]/then/seq[2]/then/seq[6]/loop[18]",
+              "reason": "type_mismatch"
+            },
+            {
+              "source_var": "r2_11",
+              "destination_var": "r2_9",
+              "region": "body/seq[6]/then/seq[2]/then/seq[6]/loop[19]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r19_5",
+              "destination_var": "r19_6",
+              "region": "body/seq[6]/then/seq[2]/then[0]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r17_1",
+              "destination_var": "r17_2",
+              "region": "body/seq[6]/then/seq[2]/then[1]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r16_7",
+              "destination_var": "r16_8",
+              "region": "body/seq[6]/then/seq[2]/then[2]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r4_8",
+              "destination_var": "r4_9",
+              "region": "body/seq[6]/then/seq[2]/then[3]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r3_8",
+              "destination_var": "r3_9",
+              "region": "body/seq[6]/then/seq[2]/then[4]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r2_8",
+              "destination_var": "r2_9",
+              "region": "body/seq[6]/then/seq[2]/then[5]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r16_9",
+              "destination_var": "r16_10",
+              "region": "body/seq[6]/then/seq[2]/then[7]",
+              "reason": "crosses_control_boundary"
+            },
+            {
+              "source_var": "r16_7",
+              "destination_var": "r16_10",
+              "region": "body/seq[6]/then/seq[2]/else[0]",
+              "reason": "source_multiple_definitions"
+            },
+            {
+              "source_var": "r16_11",
+              "destination_var": "r16_10",
+              "region": "body/seq[7]/loop[4]",
+              "reason": "destination_multiple_definitions"
+            },
+            {
+              "source_var": "r3_14",
+              "destination_var": "r15_1",
+              "region": "body/seq[7]/loop[5]",
+              "reason": "destination_multiple_definitions"
+            }
+          ]
+        }
+      },
+      "call_rendering": {
+        "proof_debt_count": 0,
+        "render_ir_calllike_count": 0,
+        "render_ir_visible_proof_debt_count": 0,
+        "render_ir_missing_proof_debt_count": 0,
+        "final_ast_calllike_count": 0,
+        "final_ast_visible_proof_debt_count": 0,
+        "final_ast_hidden_proof_debt_count": 0,
+        "final_ast_proven_elided_proof_debt_count": 0,
+        "final_ast_unproven_hidden_proof_debt_count": 0,
+        "final_ast_ambiguous_proof_debt_site_count": 0,
+        "final_ast_unattributed_calllike_count": 0,
+        "sites": []
+      },
+      "unresolved_control": [],
+      "live_ins": {
+        "register_count": 14,
+        "use_count": 37,
+        "suspicious_register_count": 0,
+        "suspicious_use_count": 0,
+        "by_class": {
+          "P": 1,
+          "R": 13
+        },
+        "by_kind": {
+          "expected_machine_state": 37
+        },
+        "by_confidence": {
+          "expected": 37
+        },
+        "by_role": {
+          "phi_input": 37
+        },
+        "registers": [
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 19,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 12,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 11,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 10,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 9,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 8,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 7,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R17.0",
+            "class": "R",
+            "index": 17,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 1,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 7,
+            "first_statement_index": 6,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R18.0",
+            "class": "R",
+            "index": 18,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 2,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 5,
+            "first_statement_index": 5,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R19.0",
+            "class": "R",
+            "index": 19,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 1,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 7,
+            "first_statement_index": 4,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 3,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 2,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 1,
+            "first_opcode": "phi"
+          },
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "use_count": 3,
+            "roles": [
+              "phi_input"
+            ],
+            "first_block_id": 4,
+            "first_statement_index": 0,
+            "first_opcode": "phi"
+          }
+        ],
+        "uses": [
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 0,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R23.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 1,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R22.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 2,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R21.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 3,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R20.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 7,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R13.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 8,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R12.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 9,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R11.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 10,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R10.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 11,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R9.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 4,
+            "statement_index": 12,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R8.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "block_id": 4,
+            "statement_index": 19,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "P4.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 0,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R23.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 1,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R22.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 2,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R21.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 3,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R20.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R18.0",
+            "class": "R",
+            "index": 18,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 5,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R18.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 7,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R13.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 8,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R12.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 9,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R11.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 10,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R10.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 11,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R9.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 5,
+            "statement_index": 12,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R8.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "block_id": 5,
+            "statement_index": 19,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "P4.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R23.0",
+            "class": "R",
+            "index": 23,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 0,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R23.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R22.0",
+            "class": "R",
+            "index": 22,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 1,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R22.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R21.0",
+            "class": "R",
+            "index": 21,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 2,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R21.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R20.0",
+            "class": "R",
+            "index": 20,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 3,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R20.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R19.0",
+            "class": "R",
+            "index": 19,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 4,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R19.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R18.0",
+            "class": "R",
+            "index": 18,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 5,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R18.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R17.0",
+            "class": "R",
+            "index": 17,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 6,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R17.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R13.0",
+            "class": "R",
+            "index": 13,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 9,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R13.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R12.0",
+            "class": "R",
+            "index": 12,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 10,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R12.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R11.0",
+            "class": "R",
+            "index": 11,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 11,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R11.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R10.0",
+            "class": "R",
+            "index": 10,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 12,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R10.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R9.0",
+            "class": "R",
+            "index": 9,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 13,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R9.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "R8.0",
+            "class": "R",
+            "index": 8,
+            "ssa": 0,
+            "ty": "u32",
+            "c_type": "uint32_t",
+            "block_id": 7,
+            "statement_index": 14,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "R8.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          },
+          {
+            "register": "P4.0",
+            "class": "P",
+            "index": 4,
+            "ssa": 0,
+            "ty": "u8",
+            "c_type": "uint8_t",
+            "block_id": 7,
+            "statement_index": 21,
+            "opcode": "phi",
+            "role": "phi_input",
+            "kind": "expected_machine_state",
+            "confidence": "expected",
+            "expression": "P4.0",
+            "reason": "SSA phi reads an entry-carried machine value before any reachable definition"
+          }
+        ],
+        "warnings": []
+      },
+      "hazards": [],
+      "warnings": [
+        {
+          "severity": "info",
+          "code": "unreachable_cfg_blocks",
+          "message": "2 CFG block(s) are decoded but unreachable from the selected entry"
+        }
+      ]
+    }
+  ]
+}

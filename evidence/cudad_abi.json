@@ -1,0 +1,248 @@
+{
+  "custom": {
+    "name": "custom_kernel",
+    "sm": 80,
+    "instr": 424,
+    "params": [
+      [
+        0,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        2,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        4,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        6,
+        "word32",
+        "int32_t",
+        null
+      ]
+    ],
+    "memory": {
+      "access_count": 136,
+      "dynamic_address_accesses": 7,
+      "unresolved_root_accesses": 0,
+      "unknown_const_memory_root_accesses": 0
+    }
+  },
+  "vec_add": {
+    "name": "vec_add",
+    "sm": 80,
+    "instr": 32,
+    "params": [
+      [
+        0,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        2,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        4,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        6,
+        "word32",
+        "int32_t",
+        null
+      ]
+    ],
+    "memory": {
+      "access_count": 4,
+      "dynamic_address_accesses": 3,
+      "unresolved_root_accesses": 0,
+      "unknown_const_memory_root_accesses": 0
+    }
+  },
+  "sgemm": {
+    "name": "_Z8sgemm_v1iiifPfS_fS_",
+    "sm": 80,
+    "instr": 216,
+    "params": [
+      [
+        0,
+        "word32",
+        "int32_t",
+        null
+      ],
+      [
+        1,
+        "word32",
+        "int32_t",
+        null
+      ],
+      [
+        2,
+        "word32",
+        "int32_t",
+        null
+      ],
+      [
+        3,
+        "word32",
+        "float",
+        null
+      ],
+      [
+        4,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        6,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        8,
+        "word32",
+        "float",
+        null
+      ],
+      [
+        10,
+        "ptr64",
+        null,
+        "float"
+      ]
+    ],
+    "memory": {
+      "access_count": 62,
+      "dynamic_address_accesses": 60,
+      "unresolved_root_accesses": 0,
+      "unknown_const_memory_root_accesses": 0
+    }
+  },
+  "reduce": {
+    "name": "_Z16device_reduce_v4PfS_i",
+    "sm": 80,
+    "instr": 80,
+    "params": [
+      [
+        0,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        2,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        4,
+        "word32",
+        "int32_t",
+        null
+      ]
+    ],
+    "memory": {
+      "access_count": 5,
+      "dynamic_address_accesses": 4,
+      "unresolved_root_accesses": 0,
+      "unknown_const_memory_root_accesses": 0
+    }
+  },
+  "sgemv": {
+    "name": "_Z9sgemv_k32PfS_S_ii",
+    "sm": 80,
+    "instr": 136,
+    "params": [
+      [
+        0,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        2,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        4,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        6,
+        "word32",
+        "int32_t",
+        null
+      ],
+      [
+        7,
+        "word32",
+        "int32_t",
+        null
+      ]
+    ],
+    "memory": {
+      "access_count": 12,
+      "dynamic_address_accesses": 11,
+      "unresolved_root_accesses": 0,
+      "unknown_const_memory_root_accesses": 0
+    }
+  },
+  "softmax": {
+    "name": "_Z19softmax_row_kernel2PfS_ii",
+    "sm": 80,
+    "instr": 728,
+    "params": [
+      [
+        0,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        2,
+        "ptr64",
+        null,
+        "float"
+      ],
+      [
+        4,
+        "word32",
+        "int32_t",
+        null
+      ],
+      [
+        5,
+        "word32",
+        "int32_t",
+        null
+      ]
+    ],
+    "memory": {
+      "access_count": 45,
+      "dynamic_address_accesses": 44,
+      "unresolved_root_accesses": 0,
+      "unknown_const_memory_root_accesses": 0
+    }
+  }
+}

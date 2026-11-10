@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# CUDA / GPU build artifacts
+*.o
+*.cu.o
+*.cubin
+*.ptx
+*.fatbin
+*.nvlink
+cuda_ref/
+
+# Build output
+build/
+*.so
+*.dylib
+
+# Temporary / scratch
+/tmp/
+*.tmp
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Evidence / large artifacts (keep tracked versions only)
+cublas_fatbin.bin
+cublas_gpu_evidence.json
+cublas_fatbin.2.sm_80.cubin
+spec.json
+generated_kernel.py
